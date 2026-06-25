@@ -157,9 +157,13 @@ AI-ChatBot-Project/
 
 ## 📸 Screenshots
 
-> Login Page | Chat Interface | Saved Messages | Settings
+> Login Page | Chat Interface |
 
-*(Add screenshots here)*
+### Login Page
+![Login](assets/login.png)
+
+### Chat Interface
+![Chat UI](assets/chat-ui.png)
 
 ---
 
