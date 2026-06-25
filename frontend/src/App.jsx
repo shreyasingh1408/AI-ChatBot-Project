@@ -88,7 +88,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    const s = io("http://localhost:3000");
+    const s = io("https://ai-chatbot-project-6eu7.onrender.com");
     setSocket(s);
     s.on("ai-message-response", (response) => {
       const botMsg = { id: Date.now() + 1, sender: "bot", text: response.response, time: formatTime(new Date()) };

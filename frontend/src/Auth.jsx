@@ -15,8 +15,8 @@ export default function Auth({ onLogin }) {
     setLoading(true);
 
     const url = isLogin
-      ? "http://localhost:3000/api/auth/login"
-      : "http://localhost:3000/api/auth/register";
+      ? "https://ai-chatbot-project-6eu7.onrender.com/api/auth/login"
+      : "https://ai-chatbot-project-6eu7.onrender.com/api/auth/register";
 
     const body = isLogin
       ? { email: form.email, password: form.password }
