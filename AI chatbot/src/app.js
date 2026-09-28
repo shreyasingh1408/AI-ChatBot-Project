@@ -8,16 +8,23 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connect
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('MongoDB connected!'))
-  .catch((err) => console.error('MongoDB error:', err));
-
-// Routes
 app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
-  res.send('hello world');
+    res.send('hello world');
 });
+
+async function connectDB() {
+    try {
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log('MongoDB connected!');
+        console.log('MongoDB readyState:', mongoose.connection.readyState);
+    } catch (err) {
+        console.error('MongoDB error:', err);
+        process.exit(1);
+    }
+}
+
+connectDB();
 
 module.exports = app;
